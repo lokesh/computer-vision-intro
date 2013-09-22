@@ -1,0 +1,54 @@
+@import base
+
+*
+  +box-sizing(border-box)
+
+body
+  background: $bgColor
+  color: $color
+
+body,
+button,
+input
+  font-family: "Open Sans", sans-serif
+  font-weight: 300
+  font-size: 20px
+
+.panel-heading
+  margin-bottom: $gutter/4
+  color: darken($color, 40%)
+  font-size: 16px
+  font-weight: 500
+  text-transform: uppercase
+  
+
+.toolbar
+  position: absolute
+  width: 250px
+  background: $darkGray
+
+.editor
+  position: absolute
+  left: 250px
+  background: black
+
+.sources
+  padding: $gutter
+
+.filters
+  padding: $gutter
+
+.btn
+  padding: $gutter/2
+  border: none
+  color: $lightGray
+  background: lighten($darkGray, 5%)
+  +border-radius($radius)
+  &:hover
+    cursor: pointer
+    background: lighten($darkGray, 10%)
+  &:active
+    background: lighten($darkGray, 25%)
+
+.full
+  width: 100%

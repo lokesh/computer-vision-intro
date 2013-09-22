@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet">
+    <link rel="stylesheet" href="css/easycv.css">
+  </head>
+  <body>
+
+
+    <div id="app" class="app"></div>
+
+    
+    <script id="workspace-template" type="text/html">
+      <section id="toolbar" class="toolbar">
+        <section id="sources" class="sources"></section>
+        <section id="filters" class="filters"></section>
+      </section>
+      <section id="editor" class="editor"></section>
+    </script>
+
+    <script id="sources-template" type="text/html">
+      <div class="panel-heading">Sources</div>
+      <button class="btn full">Upload1</button>
+      <button class="btn full">Webcam</button>
+    </script>
+
+    <script id="filters-template" type="text/html">
+      <div class="panel-heading">Filters</div>
+      <button class="btn full">Blur</button>
+      <button class="btn full">Grayscale</button>
+    </script>
+
+
+    <script data-main="js/main" src="bower_components/requirejs/require.js"></script>
+  </body>
+</html>
