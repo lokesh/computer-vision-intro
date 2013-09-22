@@ -55,32 +55,13 @@
 
   
   Filters.contrast = function(imageData, adjust) {
-    adjust     = Math.pow((parseInt(adjust, 10) + 100) / 100, 2);
-    console.log(adjust);
+    adjust = (adjust + 100) / (100 - adjust);
+
     var pixels = imageData.data;
     for (var i = 0; i < pixels.length; i += 4) {
-      // pixels[i]   += adjust;
-      // pixels[i+1] += adjust;
-      // pixels[i+2] += adjust;
-
-      pixels[i] /= 255;
-      pixels[i] -= 0.5;
-      pixels[i] *= adjust;
-      pixels[i] += 0.5;
-      pixels[i] *= 255;
-      // console.log(pixels[i]);
-      // console.log('------');
-      pixels[i+1] /= 255;
-      pixels[i+1] -= 0.5;
-      pixels[i+1] *= adjust;
-      pixels[i+1] += 0.5;
-      pixels[i+1] *= 255;
-      
-      pixels[i+2] /= 255;
-      pixels[i+2] -= 0.5;
-      pixels[i+2] *= adjust;
-      pixels[i+2] += 0.5;
-      pixels[i+2] *= 255;
+      pixels[i]   = (adjust * ((pixels[i] - 128) + 128));
+      pixels[i+1] = (adjust * ((pixels[i+1] - 128) + 128));
+      pixels[i+2] = (adjust * ((pixels[i+2] - 128) + 128));
     }
 
     return imageData;
@@ -103,13 +84,13 @@
   };
 
   function applyFilters() {
-    var brightness = $toolbar.find('.brightness-slider').val();
-    var contrast   = $toolbar.find('.contrast-slider').val();
-    var saturation = $toolbar.find('.saturation-slider').val();
+    var brightness = parseInt($toolbar.find('.brightness-slider').val(), 10);
+    var contrast   = parseInt($toolbar.find('.contrast-slider').val(), 10);
+    var saturation = parseInt($toolbar.find('.saturation-slider').val(), 10);
 
     var imageData  = pic.getSourceImageData();
     imageData = Filters.brightness(imageData, brightness);
-    // imageData = Filters.contrast(imageData, contrast);
+    imageData = Filters.contrast(imageData, contrast);
     imageData = Filters.saturation(imageData, saturation);
     pic.drawImageData(imageData);
   }
