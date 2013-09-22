@@ -1,4 +1,39 @@
-@import base
+@import compass/reset
+@import compass/css3
+@import compass/utilities
+@import ../bower_components/components-font-awesome/scss/font-awesome
+
+
+// Colors
+$red: #ec5757
+$orange: #ff7c4f
+$yellow: #ffd366
+$green: #43b364
+$blue: #2da5c4
+$purple: #a083c8
+
+$offWhite: #f7f7f7
+$lightGray: #ccc
+$gray: #666
+$darkGray: #222
+
+$color: $darkGray
+$tintColor: $green
+$bgColor: $offWhite
+$borderColor: lighten($lightGray, 10%)
+
+// Fonts
+// We're using Open Sans hosted by Google Fonts with the following weights:
+// * 300 Light
+// * 400 Normal
+// * 600 Semi-bold
+// * 700 Bold
+// * 800 Extra-bold
+
+// Layout
+$gutter: 20px
+$radius: 2px
+
 
 *
   +box-sizing(border-box)
@@ -12,43 +47,130 @@ button,
 input
   font-family: "Open Sans", sans-serif
   font-weight: 300
-  font-size: 20px
-
-.panel-heading
-  margin-bottom: $gutter/4
-  color: darken($color, 40%)
   font-size: 16px
-  font-weight: 500
-  text-transform: uppercase
-  
+
+a
+  color: $green
+  text-decoration: none
+
+
+/* Buttons */
+
+.btn
+  padding: $gutter/4 $gutter
+  border: none
+  color: $tintColor
+  background-color: white
+  text-align: left
+  &:hover
+    cursor: pointer
+    background: $offWhite
+  &:active
+    background: darken($offWhite, 10%)
+
+.full
+  width: 100%
+
+.btn-icon
+  padding: 0
+  background: transparent
+  border: none
+  &:hover
+    cursor: pointer
+
+
+/* Slider */
+
+.horizontal-range
+  -webkit-appearance: none
+  background-color: $green
+  height: 2px
+  width: 100%
+  &:hover
+    cursor: pointer
+
+::-webkit-slider-thumb
+  -webkit-appearance: none
+  width: 20px
+  height: 20px
+  border: 1px solid darken($lightGray, 5%)
+  background-color: white
+  +border-radius(50%)
+
+
+/* Toolbar */
 
 .toolbar
   position: absolute
   width: 250px
-  background: $darkGray
+  padding: $gutter 0
+  overflow-y: auto
+  background: white
+  border-right: 1px solid $borderColor
+
+.panel
+  margin-bottom: $gutter
+  padding-bottom: $gutter/2
+  border-bottom: 1px solid $borderColor
+
+.panel-heading
+  padding: 0 $gutter
+  color: darken($color, 40%)
+  font-size: 14px
+  font-weight: 500
+  text-transform: uppercase
+
+.control-heading
+  position: relative
+  display: block
+  padding: $gutter/2 $gutter
+  &:hover
+    cursor: pointer
+    background: $offWhite
+  &:active
+    background: darken($offWhite, 10%)
+
+  .heading-label
+    // padding-left: $gutter * 1.5
+
+  .btn-icon
+    color: $lightGray
+  .toggle-on,
+  .toggle-off
+    position: absolute
+    left: $gutter
+    display: none
+  .toggle-off
+    display: none
+  
+  .toggle-show,
+  .toggle-hide
+    position: absolute
+    right: $gutter
+  .toggle-hide
+    display: none
+
+.control-content
+  display: none
+  border-bottom: 1px solid $borderColor
+  padding: $gutter
+
+.control
+  &.open
+    margin-bottom: $gutter/4
+    .control-heading
+      .toggle-show
+        display: none
+      .toggle-hide
+        display: block
+    .control-content
+      display: block
+  
+
+/* Editor */
 
 .editor
   position: absolute
   left: 250px
-  background: black
-
-.sources
-  padding: $gutter
-
-.filters
-  padding: $gutter
-
-.btn
-  padding: $gutter/2
-  border: none
-  color: $lightGray
-  background: lighten($darkGray, 5%)
-  +border-radius($radius)
-  &:hover
-    cursor: pointer
-    background: lighten($darkGray, 10%)
-  &:active
-    background: lighten($darkGray, 25%)
-
-.full
-  width: 100%
+  padding: $gutter * 2
+  overflow: auto
