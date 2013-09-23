@@ -29,8 +29,6 @@
       
        <div class="control">
           <a href="#" class="control-heading">
-            <button class="icon-check-empty btn-icon toggle-on"></button>
-            <button class="icon-check btn-icon toggle-off"></button>
             <button class="icon-angle-down btn-icon toggle-show"></button>
             <button class="icon-angle-up btn-icon toggle-hide"></button>
             <h3 class="heading-label">Brightness</h3>
@@ -42,8 +40,6 @@
 
        <div class="control">
           <a href="#" class="control-heading">
-            <button class="icon-check-empty btn-icon toggle-on"></button>
-            <button class="icon-check btn-icon toggle-off"></button>
             <button class="icon-angle-down btn-icon toggle-show"></button>
             <button class="icon-angle-up btn-icon toggle-hide"></button>
             <h3 class="heading-label">Contrast</h3>
@@ -55,8 +51,6 @@
 
         <div class="control">
           <a href="#" class="control-heading">
-            <button class="icon-check-empty btn-icon toggle-on"></button>
-            <button class="icon-check btn-icon toggle-off"></button>
             <button class="icon-angle-down btn-icon toggle-show"></button>
             <button class="icon-angle-up btn-icon toggle-hide"></button>
             <h3 class="heading-label">Saturation</h3>
@@ -67,16 +61,21 @@
         </div>
         
         <div class="control">
-          <a href="#" class="control-heading">
-            <button class="icon-check-empty btn-icon toggle-on"></button>
-            <button class="icon-check btn-icon toggle-off"></button>
+            <a href="#" class="control-heading">
             <button class="icon-angle-down btn-icon toggle-show"></button>
             <button class="icon-angle-up btn-icon toggle-hide"></button>
             <h3 class="heading-label">Threshold</h3>
           </a>
           <div class="control-content">
-            <input type="range" class="horizontal-range threshold-slider" min="-100" max="100" step="1" value="0" />
+            <input type="range" class="horizontal-range threshold-slider" min="0" max="255" step="1" value="0" />
           </div>
+        </div>
+
+        <div class="control">
+          <a href="#" class="control-row">
+            <button class="btn-square toggle-on invert-checkbox" data-checked="false"></button>
+            <h3 class="heading-label">Invert</h3>
+          </a>
         </div>
 
       </section>
@@ -84,7 +83,7 @@
       <section id="commands" class="commands panel">
         <h2 class="panel-heading">Commands</h2>
         <button class="btn full">Find edges</button>
-        <button class="btn full">Reset</button>
+        <button class="btn full reset-button">Reset</button>
       </section>
 
     </section>

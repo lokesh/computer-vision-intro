@@ -78,6 +78,15 @@ a
   &:hover
     cursor: pointer
 
+.btn-square
+  width: 14px
+  height: 14px
+  background: white
+  border: 1px solid $lightGray
+  +border-radius($radius)
+  &.active
+    background: $green
+    border-color: $green
 
 /* Slider */
 
@@ -130,25 +139,31 @@ a
   &:active
     background: darken($offWhite, 10%)
 
-  .heading-label
-    // padding-left: $gutter * 1.5
-
   .btn-icon
     color: $lightGray
-  .toggle-on,
-  .toggle-off
-    position: absolute
-    left: $gutter
-    display: none
-  .toggle-off
-    display: none
-  
+
   .toggle-show,
   .toggle-hide
     position: absolute
     right: $gutter
   .toggle-hide
     display: none
+
+.control-row
+  position: relative
+  display: block
+  padding: $gutter/2 $gutter
+  &:hover
+    cursor: pointer
+    background: $offWhite
+  &:active
+    background: darken($offWhite, 10%)
+
+  .toggle-on
+    position: absolute
+    right: $gutter
+    &:hover
+      cursor: pointer
 
 .control-content
   display: none
