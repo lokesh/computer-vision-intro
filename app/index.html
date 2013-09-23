@@ -17,13 +17,13 @@
   <body>
 
    <section id="toolbar" class="toolbar">
-
+<!-- 
       <section id="sources" class="sources panel">
         <h2 class="panel-heading">Sources</h2>
         <button class="btn full">Upload</button>
         <button class="btn full">Webcam</button>
       </section>
-
+ -->
       <section id="filters" class="filters panel">
         <h2 class="panel-heading">Filters</h2>
       
@@ -70,6 +70,17 @@
             <input type="range" class="horizontal-range blur-slider" min="0" max="25" step="1" value="0" />
           </div>
         </div>
+
+        <div class="control">
+          <a href="#" class="control-heading">
+            <button class="icon-angle-down btn-icon toggle-show"></button>
+            <button class="icon-angle-up btn-icon toggle-hide"></button>
+            <h3 class="heading-label">Sharpen</h3>
+          </a>
+          <div class="control-content">
+            <input type="range" class="horizontal-range sharpen-slider" min="0" max="25" step="1" value="0" />
+          </div>
+        </div>
         
         <div class="control">
             <a href="#" class="control-heading">
@@ -88,12 +99,17 @@
             <h3 class="heading-label">Invert</h3>
           </a>
         </div>
-
+        <div class="control">
+          <a href="#" class="control-row">
+            <button class="btn-square toggle-on edges-checkbox" data-checked="false"></button>
+            <h3 class="heading-label">Show edges</h3>
+          </a>
+        </div>
       </section>
       
       <section id="commands" class="commands panel">
         <h2 class="panel-heading">Commands</h2>
-        <button class="btn full">Find edges</button>
+        <button class="btn full blob-button">Count blobs</button>
         <button class="btn full reset-button">Reset</button>
       </section>
 
@@ -105,10 +121,9 @@
 
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
-    <script src="bower_components/caman/dist/caman.full.js"></script>
-    <!-- <script src="bower_components/fabric/jquery.js" /> -->
 
     <script src="js/pic.js"></script>
+    <script src="js/filters.js"></script>
     <script src="js/easycv.js"></script>
   </body>
 </html>

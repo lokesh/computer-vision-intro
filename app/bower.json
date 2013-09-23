@@ -2,9 +2,7 @@
   "name": "EasyCV",
   "version": "0.0.1",
   "dependencies": {
-    "caman": "latest",
     "components-font-awesome": "latest",
-    "fabric": "latest",
     "jquery": "latest",
     "modernizr": "latest",
     "underscore": "latest"
