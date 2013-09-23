@@ -41,3 +41,10 @@ Pic.prototype.removeCanvas = function () {
 Pic.prototype.clear = function () {
     this.context.clearRect(0, 0, this.width, this.height);
 };
+
+Pic.prototype.createTempImageData = function () {
+  var tempCanvas  = document.createElement('canvas');
+  var tempContext = tempCanvas.getContext('2d');
+  return tempContext.createImageData(this.canvas.width, this.canvas.height);
+};
+
