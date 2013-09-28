@@ -96,6 +96,7 @@ Filters.prototype.blur = function(imageData, blur) {
   return imageData;
 };
 
+
 Filters.prototype.sharpen = function(imageData, sharpen) {
   for (var i = 0; i <= sharpen; i++) {
     imageData = this.convolute(imageData,
@@ -105,6 +106,7 @@ Filters.prototype.sharpen = function(imageData, sharpen) {
   }
   return imageData;
 };
+
 
 Filters.prototype.edges = function(imageData) {
   var imageDataCopy = jQuery.extend(true, {}, imageData);
@@ -127,6 +129,7 @@ Filters.prototype.edges = function(imageData) {
   }
   return imageData;
 };
+
 
 Filters.prototype.threshold = function(imageData, threshold) {
   var pixels = imageData.data;

@@ -43,6 +43,11 @@ $(document).ready(function() {
   });
 
   // Commands
+  $toolbar.on('click', '.blob-button', function(event) {
+    event.preventDefault();
+    countBlobs();
+  });
+
   $toolbar.on('click', '.reset-button', function(event) {
     event.preventDefault();
     resetFilters();
@@ -58,9 +63,11 @@ $(document).ready(function() {
   var filters = new Filters(pic);
   var img     = new Image();
   
-  img.src = 'img/tester.jpg';
-  // img.src = 'img/tester2.png';
-  // img.src = 'img/lancelot.jpg';
+  // img.src = 'img/beetle.jpg';
+  img.src = 'img/handwriting.jpg';
+  // img.src = 'img/nissan.jpg';
+  // img.src = 'img/pt.jpg';
+  
   img.onload = function(){
     pic.setWidth(img.width);
     pic.setHeight(img.height);
@@ -110,6 +117,65 @@ $(document).ready(function() {
       .removeClass('active');
 
     applyFilters();
+  }
+
+  function countBlobs() {
+    var imageData = pic.getImageData();
+    var pixels    = imageData.data;
+    var width     = imageData.width;
+    var height    = imageData.height;
+
+    var offset;
+
+    
+    var blobCount = 0;
+    var blobs     = [];
+    // for (var i = 0; i < pixels.length; i += 4) {
+    //   if (pixels[i] + pixels[i + 1] +  pixels[i + 2] >=765) {
+    //     // Is it the first pixel?
+    //     if (i === 0) {
+    //       blobCount++;
+    //       blobs[0] = blobCount;
+    //     } else if (i % (width * 4) === 0) { // Is pixel in first column?
+          
+    //     } else if (i < (width * 4)) { // Is pixel in first row?
+          
+    //     }
+    //   } else {
+    //     // blobs[]
+    //   }
+    // }
+    // debugger;
+    for (var y = 0; y < height; y++) {
+      for (var x = 0; x < width; x++) {
+        offset = ((y * width) + x) * 4;
+        if (pixels[offset] + pixels[offset + 1] +  pixels[offset + 2] >=765) {
+          if (x === 0 && y === 0) {
+            blobCount++;
+            console.log(blobs);
+            blobs[(y * width) + x] = blobCount;
+          } else if (x === 0) { // Is pixel in first column?
+            if (blobs[((y - 1) * width) + x] > 0) {
+              blobs[(y * width) + x] = blobs[((y - 1) * width) + x];
+            } else {
+              blobCount++;
+              blobs[(y * width) + x] = blobCount;
+            }
+          } else if (y === 0) { // Is pixel in first row?
+            if (blobs[(y * width) + x - 1] > 0) {
+              blobs[(y * width) + x] = blobs[(y * width) + x - 1];
+            } else {
+              blobCount++;
+              blobs[(y * width) + x] = blobCount;
+            }
+          } else {
+            // if (blobs[x - 1][y] > 0) {
+          }
+        }
+      }
+    }
+    console.log(blobCount);
+    pic.drawImageData(imageData);
   }
 
   resize();

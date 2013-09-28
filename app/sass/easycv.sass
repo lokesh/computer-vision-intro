@@ -15,7 +15,7 @@ $purple: #a083c8
 $offWhite: #f7f7f7
 $lightGray: #ccc
 $gray: #666
-$darkGray: #222
+$darkGray: #444
 
 $color: $darkGray
 $tintColor: $green
@@ -124,7 +124,6 @@ a
 
 .panel-heading
   padding: 0 $gutter
-  color: darken($color, 40%)
   font-size: 14px
   font-weight: 500
   text-transform: uppercase
@@ -189,3 +188,27 @@ a
   left: 250px
   padding: $gutter * 2
   overflow: auto
+
+
+/* Blob detection demo */
+.row
+  +pie-clearfix
+  
+.block
+  display: block
+  float: left
+  width: 100px
+  height: 100px
+  margin: 0
+  padding: 0
+  border: none
+  border-bottom: 1px solid $lightGray
+  border-right: 1px solid $lightGray
+  font-size: 48px
+  text-align: center
+  &.on
+    background: $gray
+
+
+
+

@@ -2368,7 +2368,7 @@ a .icon-rotate-90:before, a .icon-rotate-180:before, a .icon-rotate-270:before, 
 /* line 41, ../sass/easycv.sass */
 body {
   background: #f7f7f7;
-  color: #222222;
+  color: #444444;
 }
 
 /* line 45, ../sass/easycv.sass */
@@ -2483,96 +2483,126 @@ a {
 /* line 125, ../sass/easycv.sass */
 .panel-heading {
   padding: 0 20px;
-  color: black;
   font-size: 14px;
   font-weight: 500;
   text-transform: uppercase;
 }
 
-/* line 132, ../sass/easycv.sass */
+/* line 131, ../sass/easycv.sass */
 .control-heading {
   position: relative;
   display: block;
   padding: 10px 20px;
 }
-/* line 136, ../sass/easycv.sass */
+/* line 135, ../sass/easycv.sass */
 .control-heading:hover {
   cursor: pointer;
   background: #f7f7f7;
 }
-/* line 139, ../sass/easycv.sass */
+/* line 138, ../sass/easycv.sass */
 .control-heading:active {
   background: #dedede;
 }
-/* line 142, ../sass/easycv.sass */
+/* line 141, ../sass/easycv.sass */
 .control-heading .btn-icon {
   color: #cccccc;
 }
-/* line 145, ../sass/easycv.sass */
+/* line 144, ../sass/easycv.sass */
 .control-heading .toggle-show,
 .control-heading .toggle-hide {
   position: absolute;
   right: 20px;
 }
-/* line 149, ../sass/easycv.sass */
+/* line 148, ../sass/easycv.sass */
 .control-heading .toggle-hide {
   display: none;
 }
 
-/* line 152, ../sass/easycv.sass */
+/* line 151, ../sass/easycv.sass */
 .control-row {
   position: relative;
   display: block;
   padding: 10px 20px;
 }
-/* line 156, ../sass/easycv.sass */
+/* line 155, ../sass/easycv.sass */
 .control-row:hover {
   cursor: pointer;
   background: #f7f7f7;
 }
-/* line 159, ../sass/easycv.sass */
+/* line 158, ../sass/easycv.sass */
 .control-row:active {
   background: #dedede;
 }
-/* line 162, ../sass/easycv.sass */
+/* line 161, ../sass/easycv.sass */
 .control-row .toggle-on {
   position: absolute;
   right: 20px;
 }
-/* line 165, ../sass/easycv.sass */
+/* line 164, ../sass/easycv.sass */
 .control-row .toggle-on:hover {
   cursor: pointer;
 }
 
-/* line 168, ../sass/easycv.sass */
+/* line 167, ../sass/easycv.sass */
 .control-content {
   display: none;
   border-bottom: 1px solid #e6e6e6;
   padding: 10px 0 20px;
 }
 
-/* line 174, ../sass/easycv.sass */
+/* line 173, ../sass/easycv.sass */
 .control.open {
   margin-bottom: 5px;
 }
-/* line 177, ../sass/easycv.sass */
+/* line 176, ../sass/easycv.sass */
 .control.open .control-heading .toggle-show {
   display: none;
 }
-/* line 179, ../sass/easycv.sass */
+/* line 178, ../sass/easycv.sass */
 .control.open .control-heading .toggle-hide {
   display: block;
 }
-/* line 181, ../sass/easycv.sass */
+/* line 180, ../sass/easycv.sass */
 .control.open .control-content {
   display: block;
 }
 
 /* Editor */
-/* line 187, ../sass/easycv.sass */
+/* line 186, ../sass/easycv.sass */
 .editor {
   position: absolute;
   left: 250px;
   padding: 40px;
   overflow: auto;
+}
+
+/* Blob detection demo */
+/* line 194, ../sass/easycv.sass */
+.row {
+  *zoom: 1;
+}
+/* line 38, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 197, ../sass/easycv.sass */
+.block {
+  display: block;
+  float: left;
+  width: 100px;
+  height: 100px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-bottom: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+  font-size: 48px;
+  text-align: center;
+}
+/* line 209, ../sass/easycv.sass */
+.block.on {
+  background: #666666;
 }

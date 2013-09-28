@@ -26,6 +26,10 @@ Pic.prototype.drawSourceImage = function () {
   this.context.drawImage(this.image, 0, 0);
 };
 
+Pic.prototype.getImageData = function () {
+  return this.context.getImageData(0, 0, this.canvas.width, this.canvas.height);
+};
+
 Pic.prototype.getSourceImageData = function () {
   return this.sourceImageContext.getImageData(0, 0, this.canvas.width, this.canvas.height);
 };
